@@ -24,21 +24,13 @@ public abstract class Ficha {
         return escudo;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
-    }
+    public abstract void setAtaque();   
+    
+    public abstract void setVida();
 
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
-
-    public void setEscudo(int escudo) {
-        this.escudo = escudo;
-    }
+    public abstract void setEscudo();
     
 //--------------Funciones---------------------------------- 
-    
-    
     public abstract void mover();
     
 }
