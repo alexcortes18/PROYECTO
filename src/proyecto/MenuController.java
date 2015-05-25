@@ -12,6 +12,7 @@ import static javafx.application.Platform.exit;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -31,10 +32,11 @@ public class MenuController implements Initializable {
     @FXML
     public Button login;
     public TextField name;
-    
+    public PasswordField pass;
     @FXML
     public void Crear(){
-        name.setVisible(false);
+        name.setVisible(true);
+        pass.setVisible(true);
     }
     
     @FXML
@@ -46,7 +48,8 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         
+         name.setVisible(false);
+         pass.setVisible(false);
       Image img = new Image("http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg");
      
         
