@@ -11,10 +11,12 @@ package proyecto;
  */
 public class HombreLobo extends Ficha{
 
+    @Override
     public void setAtaque() {
         ataque = 5;
     }
 
+    @Override
     public void setVida() {
         vida = 5;
     }
@@ -26,6 +28,11 @@ public class HombreLobo extends Ficha{
     
     @Override
     public void mover() {
+        
+    }
+
+    @Override
+    public void ataqueEspecial() {
         
     }
     

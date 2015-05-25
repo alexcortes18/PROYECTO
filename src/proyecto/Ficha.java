@@ -33,4 +33,6 @@ public abstract class Ficha {
 //--------------Funciones---------------------------------- 
     public abstract void mover();
     
+    public abstract void ataqueEspecial();
+    
 }

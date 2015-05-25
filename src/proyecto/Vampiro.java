@@ -27,5 +27,10 @@ public class Vampiro extends Ficha{
     public void mover() {
        
     }
+
+    @Override
+    public void ataqueEspecial() {
+      
+    }
     
 }

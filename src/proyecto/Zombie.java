@@ -27,5 +27,10 @@ public class Zombie extends Ficha {
     public void mover() {
         
     }
+
+    @Override
+    public void ataqueEspecial() {
+        
+    }
     
 }

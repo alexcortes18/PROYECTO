@@ -27,5 +27,10 @@ public class Muerte extends Ficha{
     public void mover() {
        
     }
+
+    @Override
+    public void ataqueEspecial() {
+       
+    }
     
 }
