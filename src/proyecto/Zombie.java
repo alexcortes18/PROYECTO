@@ -11,15 +11,9 @@ package proyecto;
  */
 public class Zombie extends Ficha {
     
-    public void setAtaque() {
-        ataque = 1;
-    }
-
-    public void setVida() {
-        vida = 1;
-    }
-
-    public void setEscudo() {
+    Zombie(){
+        ataque= 1;
+        vida= 1;
         escudo = 0;
     }
     

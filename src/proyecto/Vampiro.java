@@ -11,15 +11,9 @@ package proyecto;
  */
 public class Vampiro extends Ficha{
     
-    public void setAtaque() {
-        ataque = 3;
-    }
-
-    public void setVida() {
-        vida = 4;
-    }
-
-    public void setEscudo() {
+    Vampiro(){
+        ataque= 3;
+        vida= 4;
         escudo = 5;
     }
     

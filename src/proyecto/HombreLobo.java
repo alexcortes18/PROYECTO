@@ -11,17 +11,9 @@ package proyecto;
  */
 public class HombreLobo extends Ficha{
 
-    @Override
-    public void setAtaque() {
-        ataque = 5;
-    }
-
-    @Override
-    public void setVida() {
-        vida = 5;
-    }
-
-    public void setEscudo() {
+    HombreLobo(){
+        ataque= 5;
+        vida= 5;
         escudo =2;
     }
     

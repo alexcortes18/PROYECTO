@@ -11,16 +11,10 @@ package proyecto;
  */
 public class Muerte extends Ficha{
 
-    public void setAtaque() {
-        ataque = 4;
-    }
-
-    public void setVida() {
-        vida = 3;
-    }
-
-    public void setEscudo() {
-        escudo = 1;
+    Muerte(){
+        ataque= 4;
+        vida= 3;
+        escudo =1;
     }
     
     @Override

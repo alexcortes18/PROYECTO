@@ -23,12 +23,6 @@ public abstract class Ficha {
     public int getEscudo() {
         return escudo;
     }
-
-    public abstract void setAtaque();   
-    
-    public abstract void setVida();
-
-    public abstract void setEscudo();
     
 //--------------Funciones---------------------------------- 
     public abstract void mover();
