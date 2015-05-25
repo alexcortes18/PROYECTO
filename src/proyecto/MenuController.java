@@ -30,13 +30,14 @@ public class MenuController implements Initializable {
      */
     ArrayList<Player> players= new ArrayList<>();
     @FXML
-    public Button login;
+    public Button login,ok;
     public TextField name;
     public PasswordField pass;
     @FXML
     public void Crear(){
         name.setVisible(true);
         pass.setVisible(true);
+        ok.setVisible(true);
     }
     
     @FXML
@@ -50,6 +51,7 @@ public class MenuController implements Initializable {
         // TODO
          name.setVisible(false);
          pass.setVisible(false);
+         ok.setVisible(false);
       Image img = new Image("http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg");
      
         
