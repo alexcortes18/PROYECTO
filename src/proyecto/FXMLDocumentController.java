@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -24,6 +25,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label label2;
     private ImageView imageview;
+    private Button button01;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -40,7 +42,7 @@ public class FXMLDocumentController implements Initializable {
        
       Image img = new Image("http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg");
       label2.setGraphic(new ImageView(img));
-        
+     
         
         
     }    
