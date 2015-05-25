@@ -64,6 +64,5 @@
          </children>
       </GridPane>
       <Label fx:id="label2" layoutX="18.0" layoutY="407.0" prefHeight="55.0" prefWidth="99.0" style="-fx-background-color: #d76666;" textFill="#d76666" />
-      <Button fx:id="button01" layoutX="150.0" layoutY="419.0" mnemonicParsing="false" prefHeight="328.0" prefWidth="798.0" />
     </children>
 </AnchorPane>
