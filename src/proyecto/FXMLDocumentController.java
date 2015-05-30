@@ -27,8 +27,9 @@ public class FXMLDocumentController implements Initializable {
     private ImageView imageview;
     private Button button01;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
+    private Image img2 = new Image(getClass().getResourceAsStream("peon.png"));
     private Label label3 ;
-    
+    private Label test;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -42,9 +43,9 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-      label2.setGraphic(new ImageView(img));
-      
+      ImageView img3 = new ImageView(img);
+      label2.setGraphic(img3);
+    
         
     }    
     

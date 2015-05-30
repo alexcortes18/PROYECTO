@@ -67,6 +67,7 @@
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="184.0" prefWidth="365.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="5" />
          </children>
       </GridPane>
-      <Label fx:id="label3" layoutX="80.0" layoutY="427.0" prefHeight="99.0" prefWidth="189.0" />
+      <Label fx:id="label3" layoutX="91.0" layoutY="420.0" prefHeight="67.0" prefWidth="130.0" />
+      <Label fx:id="test" layoutX="454.0" layoutY="443.0" text="Label" />
     </children>
 </AnchorPane>
