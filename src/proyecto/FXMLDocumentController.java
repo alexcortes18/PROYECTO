@@ -56,14 +56,11 @@ public class FXMLDocumentController implements Initializable {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 tablero.add(new Button("",peon), i, j);
-               if(i==5 && j==4){
-                tablero.setRowIndex(new Button(), 5);
-                tablero.setColumnIndex(new Button(), 4);
-               }
+               
                 
             }
         }
-        
+     
         
         for (int i = 0; i < 6; i++) {
             
