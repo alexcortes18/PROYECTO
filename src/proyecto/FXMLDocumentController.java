@@ -43,6 +43,7 @@ public class FXMLDocumentController implements Initializable {
       Image img = new Image("http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg");
       label2.setGraphic(new ImageView(img));
      
+     
         
         
     }    

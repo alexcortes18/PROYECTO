@@ -61,8 +61,8 @@
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="127.0" prefWidth="214.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="3" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="131.0" prefWidth="225.0" text="" GridPane.columnIndex="4" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="184.0" prefWidth="365.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="5" />
+            <Label fx:id="label2" prefHeight="67.0" prefWidth="100.0" style="-fx-background-color: #d76666;" textFill="#d76666" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Label fx:id="label2" layoutX="18.0" layoutY="407.0" prefHeight="55.0" prefWidth="99.0" style="-fx-background-color: #d76666;" textFill="#d76666" />
     </children>
 </AnchorPane>
