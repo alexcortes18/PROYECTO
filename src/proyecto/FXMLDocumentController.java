@@ -8,6 +8,8 @@ package PROYECTO;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -40,10 +42,7 @@ public class FXMLDocumentController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         
         System.out.println("You clicked me!");
-        
-       
-        
-        
+  
     }
     
     
@@ -63,11 +62,16 @@ public class FXMLDocumentController implements Initializable {
             }
         }
         
-        botones[5][3].setGraphic(peon);
-        
-             
-        
-        
+        EventHandler tan= new EventHandler() {
+
+            @Override
+            public void handle(Event event) {
+            System.out.println("You clicked me!");    
+            }
+        };
+                
+ 
+        botones[0][0].setOnAction(tan);
     }    
     
 }
