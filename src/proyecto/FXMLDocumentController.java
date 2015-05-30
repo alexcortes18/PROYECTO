@@ -26,12 +26,15 @@ public class FXMLDocumentController implements Initializable {
     private Label label2;
     private ImageView imageview;
     private Button button01;
+    private Image img = new Image(getClass().getResourceAsStream("peon.png"));
+    private Label label3 ;
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
         System.out.println("You clicked me!");
-        label2.setText("Hello World!");
+        
         
     }
     
@@ -40,11 +43,8 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
-      Image img = new Image("http://mikecann.co.uk/wp-content/uploads/2009/12/javafx_logo_color_1.jpg");
       label2.setGraphic(new ImageView(img));
-     
-     
-        
+      
         
     }    
     

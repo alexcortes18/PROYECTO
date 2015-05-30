@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -55,14 +56,17 @@
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="78.0" prefWidth="327.0" text="" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="321.0" prefWidth="540.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="87.0" prefWidth="193.0" text="" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" opacity="0.32" prefHeight="148.0" prefWidth="362.0" text="" />
+            <Button fx:id="Button00" mnemonicParsing="false" onAction="#handleButtonAction" opacity="0.32" prefHeight="148.0" prefWidth="362.0" text="">
+               <graphic>
+                  <Label fx:id="label2" prefHeight="59.0" prefWidth="92.0" textFill="#d76666" />
+               </graphic></Button>
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="110.0" prefWidth="215.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="131.0" prefWidth="202.0" text="" GridPane.columnIndex="2" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="127.0" prefWidth="214.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="3" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="131.0" prefWidth="225.0" text="" GridPane.columnIndex="4" />
             <Button mnemonicParsing="false" opacity="0.32" prefHeight="184.0" prefWidth="365.0" style="-fx-background-color: #d76666;" text="" GridPane.columnIndex="5" />
-            <Label fx:id="label2" prefHeight="67.0" prefWidth="100.0" style="-fx-background-color: #d76666;" textFill="#d76666" GridPane.rowIndex="5" />
          </children>
       </GridPane>
+      <Label fx:id="label3" layoutX="80.0" layoutY="427.0" prefHeight="99.0" prefWidth="189.0" />
     </children>
 </AnchorPane>
