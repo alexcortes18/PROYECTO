@@ -29,8 +29,10 @@ public class FXMLDocumentController implements Initializable {
     private GridPane tablero = new GridPane();
     private ImageView imageview;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
+    private Image img2 = new Image(getClass().getResourceAsStream("yes.png"));
     private ImageView peon = new ImageView(img);
-    
+    private ImageView blank = new ImageView(img2);
+    private Button[][] botones = new Button[6][6];
    
       
     
@@ -52,31 +54,16 @@ public class FXMLDocumentController implements Initializable {
 
         tablero.getColumnConstraints().add(new ColumnConstraints(20)); // column 0 is 100 wide
         tablero.getRowConstraints().add(new RowConstraints(-60));
-        
+     
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 5; j++) {
-                tablero.add(new Button("",peon), i, j);
-               if(i==5 && j==4){
-                tablero.setRowIndex(new Button(), 5);
-                tablero.setColumnIndex(new Button(), 4);
-               }
+            for (int j = 0; j < 6; j++) {
                 
+                botones[i][j] = new Button("", blank);
+                tablero.add(botones[i][j], i, j);
             }
         }
         
-        
-        for (int i = 0; i < 6; i++) {
-            
-                tablero.add(new Button("",new ImageView(img)), i, 0);  
-            
-        }
-    
-        for (int i = 0; i < 6; i++) {           
-            
-                tablero.add(new Button("",new ImageView(img)), i, 5);  
-            
-        }
-      
+        botones[5][3].setGraphic(peon);
         
              
         
