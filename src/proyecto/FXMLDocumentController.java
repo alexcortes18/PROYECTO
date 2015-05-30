@@ -15,6 +15,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.RowConstraints;
 
 /**
  *
@@ -23,18 +26,20 @@ import javafx.scene.layout.Background;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label2;
+    private GridPane tablero = new GridPane();
     private ImageView imageview;
-    private Button button01;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
-    private Image img2 = new Image(getClass().getResourceAsStream("peon.png"));
-    private Label label3 ;
-    private Label test;
+    private ImageView peon = new ImageView(img);
+    
+   
+      
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
         
         System.out.println("You clicked me!");
+        
+       
         
         
     }
@@ -43,9 +48,38 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      ImageView img3 = new ImageView(img);
-      label2.setGraphic(img3);
     
+
+        tablero.getColumnConstraints().add(new ColumnConstraints(20)); // column 0 is 100 wide
+        tablero.getRowConstraints().add(new RowConstraints(-60));
+        
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 5; j++) {
+                tablero.add(new Button("",peon), i, j);
+               if(i==5 && j==4){
+                tablero.setRowIndex(new Button(), 5);
+                tablero.setColumnIndex(new Button(), 4);
+               }
+                
+            }
+        }
+        
+        
+        for (int i = 0; i < 6; i++) {
+            
+                tablero.add(new Button("",new ImageView(img)), i, 0);  
+            
+        }
+    
+        for (int i = 0; i < 6; i++) {           
+            
+                tablero.add(new Button("",new ImageView(img)), i, 5);  
+            
+        }
+      
+        
+             
+        
         
     }    
     
