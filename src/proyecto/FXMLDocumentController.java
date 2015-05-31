@@ -40,7 +40,7 @@ public class FXMLDocumentController implements Initializable {
     private Button[][] botones = new Button[6][6];
     private Scanner leer = new Scanner(System.in);
     private String lol;
-    private int doctor,who;
+    private int doctor,who, batman,superman,posx,posy;
     private Button ult= new Button("",((Node)blank));
     
     @FXML
@@ -112,23 +112,32 @@ public class FXMLDocumentController implements Initializable {
             public void handle(Event event) {
          
                 Object source = event.getTarget();
-                
                 Button tardis=(Button)source;
                 
                 doctor=getX(tardis);
                 who=getY(tardis);
-                
+
                 if(ult.getGraphic()!=((Node)blank)){
-                    System.out.println("si");
+                    posx=batman- doctor;
+                    posy= superman-who;
+                    if(posx<0)
+                        posx=posx *(-1);
+                    if(posy<0)
+                        posy= posy*(-1);
+                    
+                    if((posx <=1)&& (posy <=1)){
+                        System.out.println("si");
                 
-                    if(botones[doctor][who].getGraphic()==((Node)blank)){
-                    botones[doctor][who].setGraphic(ult.getGraphic());
-                    ult.setGraphic(((Node)blank));
-                    return;
-                    }
+                        if(botones[doctor][who].getGraphic()==((Node)blank)){
+                            botones[doctor][who].setGraphic(ult.getGraphic());
+                            ult.setGraphic(((Node)blank));
+                            return;
+                        }
+                    }      
                 }           
-                ult=tardis;     
-            }            
-                     
+                ult=tardis;    
+                batman= doctor;
+                superman= who;
+            }              
         };   
 }
