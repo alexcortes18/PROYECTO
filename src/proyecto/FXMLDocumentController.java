@@ -35,10 +35,18 @@ public class FXMLDocumentController implements Initializable {
     private ImageView imageview;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
     private Image img2 = new Image(getClass().getResourceAsStream("yes.png"));
-    private Image img3 = new Image(getClass().getResourceAsStream("zombie.png"));
-    private Image vampiro = new Image(getClass().getResourceAsStream("vampiro.png"));
-    private Image muerte = new Image(getClass().getResourceAsStream("necroshield.png"));
-    private Image lobo = new Image(getClass().getResourceAsStream("nightmare!.png"));
+    
+    //faltan los zombies
+    //private Image zombieazul = new Image(getClass().getResourceAsStream("zombie.png"));
+    private Image vampiroazul = new Image(getClass().getResourceAsStream("vampiroazul.png"));
+    private Image muerteazul = new Image(getClass().getResourceAsStream("muerteazul.png"));
+    private Image loboazul = new Image(getClass().getResourceAsStream("loboazul.png"));
+    //private Image zombierojo = new Image(getClass().getResourceAsStream("zombie.png"));
+    private Image vampirorojo = new Image(getClass().getResourceAsStream("vampirorojo.png"));
+    private Image muerterojo = new Image(getClass().getResourceAsStream("muerteroja.png"));
+    private Image loborojo = new Image(getClass().getResourceAsStream("loborojo.png"));
+    
+    
     private ImageView peon = new ImageView(img);
     private ImageView blank = new ImageView(img2);
     private Button[][] botones = new Button[6][6];
@@ -99,20 +107,20 @@ public class FXMLDocumentController implements Initializable {
             }
         }
         
-        botones[0][0].setGraphic(new ImageView(lobo));
-        botones[0][5].setGraphic(new ImageView(lobo));
-        botones[3][0].setGraphic(new ImageView(lobo));
-        botones[3][5].setGraphic(new ImageView(lobo));
+        botones[0][0].setGraphic(new ImageView(loborojo));
+        botones[0][5].setGraphic(new ImageView(loboazul));
+        botones[3][0].setGraphic(new ImageView(loborojo));
+        botones[3][5].setGraphic(new ImageView(loboazul));
          
-        botones[1][0].setGraphic(new ImageView(vampiro));
-        botones[1][5].setGraphic(new ImageView(vampiro));
-        botones[4][0].setGraphic(new ImageView(vampiro));
-        botones[4][5].setGraphic(new ImageView(vampiro));
+        botones[1][0].setGraphic(new ImageView(vampirorojo));
+        botones[1][5].setGraphic(new ImageView(vampiroazul));
+        botones[4][0].setGraphic(new ImageView(vampirorojo));
+        botones[4][5].setGraphic(new ImageView(vampiroazul));
         
-        botones[2][0].setGraphic(new ImageView(muerte));
-        botones[2][5].setGraphic(new ImageView(muerte));
-        botones[5][0].setGraphic(new ImageView(muerte));
-        botones[5][5].setGraphic(new ImageView(muerte));
+        botones[2][0].setGraphic(new ImageView(muerterojo));
+        botones[2][5].setGraphic(new ImageView(muerteazul));
+        botones[5][0].setGraphic(new ImageView(muerterojo));
+        botones[5][5].setGraphic(new ImageView(muerteazul));
         
         for (int i = 0; i < 6; i++) {
                 botones[i][0].setId("Peon:"+i);
