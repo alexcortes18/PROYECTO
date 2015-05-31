@@ -37,7 +37,7 @@ public class FXMLDocumentController implements Initializable {
     private ImageView blank = new ImageView(img2);
     private Button[][] botones = new Button[6][6];
     private Scanner leer = new Scanner(System.in);
-    private String lol;
+    private String lol="";
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -93,18 +93,22 @@ public class FXMLDocumentController implements Initializable {
                          for (int i = 0; i < 6; i++) {
                             for (int j = 0; j <6 ; j++) {
                                 
-                             if( botones[i][j].getId().equals(lol)){
-                                 System.out.println("HOLA");                                
+                             if( lol.equals(botones[i][j].getId())){
+                                 System.out.println("HOLA");            
+                                 
+                                 
                                  clickedBtn.setGraphic(new ImageView(img));
-                                 clickedBtn=botones[i][j];
-                                 lol=null;                               
+                                 clickedBtn=botones[i][j];                               
+                                 botones[i][j]= new Button("",blank);
+                                 botones[i][j].setVisible(true);
+                                                            
                               }                             
                             }                          
                          }
                      }
                      else{
                          lol = clickedBtn.getId();
-                         
+                         System.out.println(lol);
                          }
                      }
                               
