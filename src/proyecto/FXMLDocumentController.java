@@ -7,6 +7,7 @@ package PROYECTO;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -35,8 +36,8 @@ public class FXMLDocumentController implements Initializable {
     private ImageView peon = new ImageView(img);
     private ImageView blank = new ImageView(img2);
     private Button[][] botones = new Button[6][6];
-   
-      
+    private Scanner leer = new Scanner(System.in);
+    private String lol;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -58,20 +59,60 @@ public class FXMLDocumentController implements Initializable {
             for (int j = 0; j < 6; j++) {
                 
                 botones[i][j] = new Button("", blank);
+                
                 tablero.add(botones[i][j], i, j);
+                botones[i][j].setOnAction(mover);
             }
-        }
+        }              
         
-        EventHandler tan= new EventHandler() {
+        for (int i = 0; i < 6; i++) {
+           
+                botones[i][0].setGraphic(new ImageView(img));
+                botones[i][0].setId("Peon:"+i);
+                botones[i][5].setGraphic(new ImageView(img));
+                botones[i][5].setId("Peon2:"+i);
+                
+        }       
+        
+    }    
+       
+    
+    
+        EventHandler mover= new EventHandler()  {
 
             @Override
             public void handle(Event event) {
-            System.out.println("You clicked me!");    
-            }
+            
+                Object source = event.getSource();
+                  if (source instanceof Button) { 
+                  Button clickedBtn = (Button) source; 
+                  System.out.println(clickedBtn.getId());
+                  
+                   
+                     if(clickedBtn.getId() == null){                          
+                         for (int i = 0; i < 6; i++) {
+                            for (int j = 0; j <6 ; j++) {
+                                
+                             if( botones[i][j].getId().equals(lol)){
+                                 System.out.println("HOLA");                                
+                                 clickedBtn.setGraphic(new ImageView(img));
+                                 clickedBtn=botones[i][j];
+                                 lol=null;                               
+                              }                             
+                            }                          
+                         }
+                     }
+                     else{
+                         lol = clickedBtn.getId();
+                         
+                         }
+                     }
+                              
+                  }            
+                     
         };
-                
- 
-        botones[0][0].setOnAction(tan);
-    }    
+        
+     
+        
     
 }
