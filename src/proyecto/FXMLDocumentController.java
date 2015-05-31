@@ -35,11 +35,13 @@ public class FXMLDocumentController implements Initializable {
     private ImageView imageview;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
     private Image img2 = new Image(getClass().getResourceAsStream("yes.png"));
+    private Image img3 = new Image(getClass().getResourceAsStream("zombie.png"));
+    private Image vampiro = new Image(getClass().getResourceAsStream("vampiro.png"));
+    private Image muerte = new Image(getClass().getResourceAsStream("necroshield.png"));
+    private Image lobo = new Image(getClass().getResourceAsStream("nightmare!.png"));
     private ImageView peon = new ImageView(img);
     private ImageView blank = new ImageView(img2);
     private Button[][] botones = new Button[6][6];
-    private Scanner leer = new Scanner(System.in);
-    private String lol;
     private int doctor,who, batman,superman,posx,posy;
     private Button ult= new Button("",((Node)blank));
     
@@ -95,16 +97,28 @@ public class FXMLDocumentController implements Initializable {
                 tablero.add(botones[i][j], i, j);
                 botones[i][j].setOnAction(mover);
             }
-        }              
+        }
+        
+        botones[0][0].setGraphic(new ImageView(lobo));
+        botones[0][5].setGraphic(new ImageView(lobo));
+        botones[3][0].setGraphic(new ImageView(lobo));
+        botones[3][5].setGraphic(new ImageView(lobo));
+         
+        botones[1][0].setGraphic(new ImageView(vampiro));
+        botones[1][5].setGraphic(new ImageView(vampiro));
+        botones[4][0].setGraphic(new ImageView(vampiro));
+        botones[4][5].setGraphic(new ImageView(vampiro));
+        
+        botones[2][0].setGraphic(new ImageView(muerte));
+        botones[2][5].setGraphic(new ImageView(muerte));
+        botones[5][0].setGraphic(new ImageView(muerte));
+        botones[5][5].setGraphic(new ImageView(muerte));
         
         for (int i = 0; i < 6; i++) {
-           
-                botones[i][0].setGraphic(new ImageView(img));
                 botones[i][0].setId("Peon:"+i);
-                botones[i][5].setGraphic(new ImageView(img));
                 botones[i][5].setId("Peon2:"+i);       
         }       
-        botones[0][5].setGraphic(peon);
+        //botones[0][5].setGraphic(peon);
     }      
         EventHandler mover= new EventHandler()  {
 
