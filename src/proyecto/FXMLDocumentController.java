@@ -109,8 +109,8 @@ public class FXMLDocumentController implements Initializable {
         
         botones[0][0].setGraphic(new ImageView(loborojo));
         botones[0][5].setGraphic(new ImageView(loboazul));
-        botones[3][0].setGraphic(new ImageView(loborojo));
-        botones[3][5].setGraphic(new ImageView(loboazul));
+        botones[3][0].setGraphic(new ImageView(muerterojo));
+        botones[3][5].setGraphic(new ImageView(muerteazul));
          
         botones[1][0].setGraphic(new ImageView(vampirorojo));
         botones[1][5].setGraphic(new ImageView(vampiroazul));
@@ -119,8 +119,8 @@ public class FXMLDocumentController implements Initializable {
         
         botones[2][0].setGraphic(new ImageView(muerterojo));
         botones[2][5].setGraphic(new ImageView(muerteazul));
-        botones[5][0].setGraphic(new ImageView(muerterojo));
-        botones[5][5].setGraphic(new ImageView(muerteazul));
+        botones[5][0].setGraphic(new ImageView(loborojo));
+        botones[5][5].setGraphic(new ImageView(loboazul));
         
         for (int i = 0; i < 6; i++) {
                 botones[i][0].setId("Peon:"+i);
