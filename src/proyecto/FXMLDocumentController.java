@@ -20,9 +20,17 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import sun.audio.AudioPlayer;
 
 /**
  *
@@ -35,7 +43,9 @@ public class FXMLDocumentController implements Initializable {
     private ImageView imageview;
     private Image img = new Image(getClass().getResourceAsStream("peon.png"));
     private Image img2 = new Image(getClass().getResourceAsStream("yes.png"));
-    
+    private Image piso = new Image(getClass().getResourceAsStream("floor.png"));
+    private Media sonido=new Media(getClass().getResource("sound.mp3").toString());
+    private Media stage=new Media(getClass().getResource("stage.mp3").toString());
     //faltan los zombies
     //private Image zombieazul = new Image(getClass().getResourceAsStream("zombie.png"));
     private Image vampiroazul = new Image(getClass().getResourceAsStream("vampiroazul.png"));
@@ -52,6 +62,11 @@ public class FXMLDocumentController implements Initializable {
     private Button[][] botones = new Button[6][6];
     private int doctor,who, batman,superman,posx,posy;
     private Button ult= new Button("",((Node)blank));
+    
+    
+    
+    
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -90,10 +105,18 @@ public class FXMLDocumentController implements Initializable {
                 return who;
     }
     
+    private void playMedia(Media m){
+    if (m != null){
+        MediaPlayer mp = new MediaPlayer(m);
+        
+        mp.play();
+    }
+}
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
-
+       
+        playMedia(stage);
         tablero.getColumnConstraints().add(new ColumnConstraints(20)); // column 0 is 100 wide
         tablero.getRowConstraints().add(new RowConstraints(-60));
      
@@ -104,14 +127,26 @@ public class FXMLDocumentController implements Initializable {
                 
                 tablero.add(botones[i][j], i, j);
                 botones[i][j].setOnAction(mover);
+                if(i%2==0&&j%2==0){
+                botones[i][j].setStyle("-fx-base: #008B8B");
+                } else{
+                    
+                }   
+                if((i==1||i==3||i==5)&&j%2!=0){
+                botones[i][j].setStyle("-fx-base:  #008B8B");
+                } else{
+                    
+                }
             }
+            
+                
         }
         
         botones[0][0].setGraphic(new ImageView(loborojo));
         botones[0][5].setGraphic(new ImageView(loboazul));
         botones[3][0].setGraphic(new ImageView(muerterojo));
         botones[3][5].setGraphic(new ImageView(muerteazul));
-         
+ 
         botones[1][0].setGraphic(new ImageView(vampirorojo));
         botones[1][5].setGraphic(new ImageView(vampiroazul));
         botones[4][0].setGraphic(new ImageView(vampirorojo));
@@ -140,6 +175,7 @@ public class FXMLDocumentController implements Initializable {
                 who=getY(tardis);
 
                 if(ult.getGraphic()!=((Node)blank)){
+                    playMedia(sonido);
                     posx=batman- doctor;
                     posy= superman-who;
                     if(posx<0)
