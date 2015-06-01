@@ -6,6 +6,7 @@
 package PROYECTO;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -38,6 +40,8 @@ public class FXMLDocumentController implements Initializable {
     private Button[][] botones = new Button[6][6];
     private Scanner leer = new Scanner(System.in);
     private String lol;
+    private int doctor,who;
+    private Button ult= new Button("",((Node)blank));
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -46,7 +50,38 @@ public class FXMLDocumentController implements Initializable {
   
     }
     
+    public void check(int a,int b){
+        if(botones[a][b].getGraphic()==null)
+            System.out.println("3");
+    }
     
+    public int getX(Button b){
+        for (int i = 0; i <botones.length; i++) {
+                    for (int j = 0; j < botones[i].length; j++) {
+                        if(botones[i][j]==b){
+                            doctor=i;
+                            who=j;
+                        }
+                    }
+                }
+                
+                
+                return doctor;
+    }
+    public int getY(Button b){
+        for (int i = 0; i <botones.length; i++) {
+                    for (int j = 0; j < botones[i].length; j++) {
+                        if(botones[i][j]==b){
+                            doctor=i;
+                            who=j;
+                        }
+                    }
+                }
+                if(b instanceof Button)
+                    System.out.println("posicion: "+ doctor+" "+who);
+                
+                return who;
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,8 +107,10 @@ public class FXMLDocumentController implements Initializable {
                 botones[i][5].setGraphic(new ImageView(img));
                 botones[i][5].setId("Peon2:"+i);
                 
+                
         }       
         
+        botones[0][5].setGraphic(peon);
     }    
        
     
@@ -82,32 +119,33 @@ public class FXMLDocumentController implements Initializable {
 
             @Override
             public void handle(Event event) {
-            
-                Object source = event.getSource();
-                  if (source instanceof Button) { 
-                  Button clickedBtn = (Button) source; 
-                  System.out.println(clickedBtn.getId());
+ 
+                
+                Object source = event.getTarget();
+                boolean sonic=true;
+                Button tardis=(Button)source;
+                
+                doctor=getX(tardis);
+                who=getY(tardis);
+                
+                if(ult.getGraphic()!=((Node)blank)){
+                    System.out.println("si");
+                
+                
+                    if(botones[doctor][who].getGraphic()==((Node)blank)){
+                    botones[doctor][who].setGraphic(ult.getGraphic());
+                    ult.setGraphic(((Node)blank));
+                    return;
+ 
+                }
+                }
+                
+                
+                int z=getY(ult);
+                ult=tardis;
+                
+                
                   
-                   
-                     if(clickedBtn.getId() == null){                          
-                         for (int i = 0; i < 6; i++) {
-                            for (int j = 0; j <6 ; j++) {
-                                
-                             if( botones[i][j].getId().equals(lol)){
-                                 System.out.println("HOLA");                                
-                                 clickedBtn.setGraphic(new ImageView(img));
-                                 clickedBtn=botones[i][j];
-                                 lol=null;                               
-                              }                             
-                            }                          
-                         }
-                     }
-                     else{
-                         lol = clickedBtn.getId();
-                         
-                         }
-                     }
-                              
                   }            
                      
         };
